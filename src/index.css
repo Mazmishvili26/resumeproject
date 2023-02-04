@@ -52,3 +52,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+
+
+/* global classes */
+
+.container{
+	max-width: 798px;
+	width: 100%;
+}

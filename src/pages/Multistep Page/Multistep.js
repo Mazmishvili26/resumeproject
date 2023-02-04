@@ -6,7 +6,6 @@ import "./Multistep.css";
 import PersonalInfo from "../../components/Personal Info Component/PersonalInfo";
 import Experience from "../../components/Experience Component/Experience";
 import Education from "../../components/Education Component/Education";
-import MultistepHeader from "./MultistepHeader";
 
 function Multistep() {
   const [step, setStep] = useState(1);
@@ -15,11 +14,7 @@ function Multistep() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm();
-
-  const handleNext = () => {
-    handleSubmit();
-  };
+  } = useForm({ mode: "onChange" });
 
   return (
     <section className="main-section">
@@ -30,6 +25,7 @@ function Multistep() {
           handleSubmit={handleSubmit}
           setStep={setStep}
           step={step}
+          watch={watch}
         />
       )}
       {step === 2 && <Experience step={step} />}
